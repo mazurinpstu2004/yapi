@@ -1,15 +1,12 @@
 #include <stdio.h>
 
-int main() {
-	FILE *file;
-	char filename[8];
-	fgets(filename, 8, stdin);
+int main(int argc, char *argv[]) {
+	FILE *file = fopen(argv[1], "r");
 
-	file = fopen(filename, "r");
-	int c;
+	char c;
 	while ((c = fgetc(file)) != EOF) {
 		putchar(c);
 	}
-	getchar();
 	fclose(file);
+	return 0;
 }
