@@ -14,17 +14,10 @@ void ArraySort(float *arr, int k) {
 	}
 }
 
-int main() {
-	int n;
-	float arg1, arg2;
-	printf("Enter n:\n");
-	scanf("%d", &n);
-
-	printf("Enter arg1:\n");
-	scanf("%f", &arg1);
-
-        printf("Enter arg2:\n");
-        scanf("%f", &arg2);
+int main(int argc, char *argv[]) {
+	int n = atoi(argv[1]);
+	float arg1 = atof(argv[2]);
+	float arg2 = atof(argv[3]);
 
 	float mas[n];
 	srand(time(NULL));
@@ -32,11 +25,10 @@ int main() {
 		mas[i] = (float)rand() / RAND_MAX * (arg2 - arg1) + arg1;
 		printf("%.1f ", mas[i]);
 	}
-	printf("\n");
+	FILE *file = fopen("task4-output", "w");
 	ArraySort(mas, n);
 	for (int i = 0; i < n; i++) {
-		printf("%.1f ", mas[i]);
+		fprintf(file, "%.1f ", mas[i]);
 	}
-
 	return 0;
 }
