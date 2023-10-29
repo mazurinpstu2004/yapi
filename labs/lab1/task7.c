@@ -1,11 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
 	FILE *file = fopen("task7-1.txt", "a");
-	char str[100];
+	char str[] = "Hello, World!";
 
-	fgets(str, sizeof(str), stdin);
-	fputs(str, file);
+	fprintf(file, "%s\n", str);
 
 	fclose(file);
 
