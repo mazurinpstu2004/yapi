@@ -37,7 +37,7 @@ int TopElement(struct Stack *stk) {
 	if (stk->top > 0) {
 		return stk->data[stk->top-1];
 	} else {
-		printf("STACK_UNDERFLOW");
+		printf("Stack is empty");
 		return 0;
 	}
 }
@@ -52,9 +52,9 @@ void PrintStack(struct Stack *stk) {
 }
 
 
-int main(int argc, char *argv[]) {
+int main() {
 	struct Stack *stk;
-	int n = atoi(argv[1]);
+	int n = 5;
 	int k;
 	stk = (struct Stack*)malloc(sizeof(struct Stack));
 
@@ -62,9 +62,8 @@ int main(int argc, char *argv[]) {
 		scanf("%d", &k);
 		push(stk, k);
 	}
-
+	pop(stk);
 	PrintStack(stk);
-	printf("%d\n", TopElement(stk));
 
 	return 0;
 }
