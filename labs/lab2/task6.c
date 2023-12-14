@@ -6,12 +6,19 @@ struct Stack {
 	int top;
 };
 
+int isfull(struct Stack *stk){
+   if(stk->top == 100)
+      return 1;
+   else
+      return 0;
+}
+
 void push(struct Stack *stk, int k) {
-	if (stk->top < 100) {
+	if (!isfull(stk)) {
 		stk->data[stk->top] = k;
 		stk->top++;
 	} else {
-		printf("STACK_OVERFLOW");
+		printf("Stack is full\n");
 	}
 }
 
@@ -22,8 +29,7 @@ int pop(struct Stack *stk) {
 		k = stk->data[stk->top];
 		return k;
 	} else {
-		printf("STACK_UNDERFLOW");
-		return 0;
+		printf("Stack is empty\n");
 	}
 }
 
