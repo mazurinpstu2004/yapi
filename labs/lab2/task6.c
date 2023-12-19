@@ -64,6 +64,5 @@ int main() {
 	}
 	pop(stk);
 	PrintStack(stk);
-
 	return 0;
 }
