@@ -21,7 +21,7 @@ term: factor
 	| term '/' factor { printf("/"); }
 
 factor: NUMBER { printf("%d", $1); }
-	| '(' expr ')' {}
+	| '(' expr ')'
 
 %%
 
