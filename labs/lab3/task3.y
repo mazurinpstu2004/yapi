@@ -8,7 +8,7 @@ void yyerror(const char *s);
 %token NUMBER
 
 %left '+' '-'
-%left '%' '/'
+%left '*' '/'
 
 %%
 

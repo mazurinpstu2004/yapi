@@ -12,7 +12,7 @@ void yyerror(const char *s);
 %token <number> NUMBER
 
 %left '+' '-'
-%left '%' '/'
+%left '*' '/'
 
 %%
 
