@@ -4,7 +4,6 @@ LEA 	R0, STRING
 PUTS                
 
 LEA	R1, NUMBERS      
-LEA 	R4, CONSTATEXP   
 LD 	R2, COUNT        
 
 LOOP_READ
@@ -55,20 +54,6 @@ LOOP_SWAP
 	LEA 	R1, NUMBERS
 	LD 	R2, COUNT
 
-LOOP_OUTCONSTATEXP
-
-	LDR 	R0, R1, #0       
-	OUT                  
-	ADD 	R1, R1, #1       
-	ADD 	R2, R2, #-1      
-	BRp 	LOOP_OUTCONSTATEXP 
-
-	LD 	R0, NEWLINE
-	OUT
-
-	LEA 	R1, NUMBERS
-	LD 	R2, COUNT
-
 LOOP_PRINT
 
 	LDR 	R0, R1, #0       
@@ -82,8 +67,7 @@ LOOP_PRINT
 HALT                
 
 STRING	.STRINGZ "Enter 5 numbers: "
-NUMBERS	.BLKW 5       
-CONSTATEXP .BLKW 5       
+NUMBERS	.BLKW 5            
 COUNT	.FILL #5      
 NEG48	.FILL #-48
 POS48	.FILL #48
